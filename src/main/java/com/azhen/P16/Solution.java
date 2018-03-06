@@ -11,10 +11,12 @@ public class Solution {
     public int threeSumClosest(int[] nums, int target) {
         Arrays.sort(nums);
         int len = nums.length;
-        int min = nums[len - 1];
+        Integer min = null;
         for (int i = 0; i < len - 2; i ++) {
             int find = find(nums, i + 1,len - 1, nums[i], target);
-            if (min > find) {
+            if (min == null) {
+                min = find;
+            } else if (Math.abs(find - target) < Math.abs(min - target)) {
                 min = find;
             }
         }
@@ -24,23 +26,19 @@ public class Solution {
     private int find(int[] nums, int l, int r, int now, int target) {
         Integer min = null;
         while (l < r) {
-            int tmp = now + nums[l] + nums[r] + target;
+            int tmp = now + nums[l] + nums[r];
             if (min == null) {
-                min = Math.abs(tmp);
+                min = tmp;
             }
-            if (Math.abs(tmp) < min) {
-                min = Math.abs(tmp);
+            if (Math.abs(tmp - target) < Math.abs(min - target)) {
+                min = tmp;
             }
-            if (tmp == 0) {
-                return 0;
-            } else if(tmp < 0) {
-               // while (l < r && nums[l] == nums[l + 1]) {
+            if (tmp == target) {
+                return tmp;
+            } else if(tmp < target) {
                     l ++;
-                //}
-            } else if (tmp > 0) {
-                //while (l < r && nums[r] == nums[r - 1]) {
+            } else if (tmp > target) {
                     r --;
-                //}
             }
         }
 

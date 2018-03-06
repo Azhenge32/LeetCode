@@ -45,4 +45,17 @@ public class Solution2_3Sum {
             }
         }
     }
+
+    public static void main(String[] args) {
+        Solution2_3Sum solution = new Solution2_3Sum();
+        int[] nums = new int[]{0,0,0};
+        List<List<Integer>> results = solution.threeSum(nums);
+        for (List<Integer> list : results) {
+            for (Integer item : list) {
+                System.out.print(item);
+                System.out.print(",");
+            }
+            System.out.println();
+        }
+    }
 }
