@@ -6,17 +6,9 @@ import java.util.concurrent.LinkedBlockingDeque;
 /**
  * BFS
  */
-public class Solution3 {
+public class Solution4 {
     private int height;
     private int width;
-    class Point {
-        public Point(int x, int y) {
-            this.x = x;
-            this.y = y;
-        }
-        int x;
-        int y;
-    }
     public int[][] updateMatrix(int[][] matrix) {
         if (matrix.length < 0) {
             return matrix;
@@ -26,33 +18,33 @@ public class Solution3 {
         int[][] dist = new int[height][width];
         for (int i = 0; i < height; i ++) {
             for (int j = 0; j < width; j ++) {
-                dist[i][j] = Integer.MAX_VALUE;
+                dist[i][j] = Integer.MAX_VALUE - 10000;
             }
         }
 
-        Queue<Point> queue = new LinkedBlockingDeque<>();
+        // 左上角
         for (int i = 0; i < height; i ++) {
             for (int j = 0; j < width; j ++) {
-                if (matrix[i][j] == 0) {
+                if(matrix[i][j] == 0) {
                     dist[i][j] = 0;
-                    Point point = new Point(j,i);
-                    queue.add(point);
+                } else {
+                    if (i > 0) {
+                        dist[i][j] = Math.min(dist[i][j], dist[i - 1][j] + 1);
+                    }
+                    if (j > 0) {
+                        dist[i][j] = Math.min(dist[i][j], dist[i][j - 1] + 1);
+                    }
                 }
             }
         }
 
-        // 遍历方向
-        int[][] dir = { { -1, 0 }, { 1, 0 }, { 0, -1 }, { 0, 1 } };
-        while (!queue.isEmpty()) {
-            Point curr = queue.poll();
-            for (int i = 0; i < 4; i ++) {
-                int newX = curr.x + dir[i][0], newY = curr.y + dir[i][1];
-                if (newX >=0 && newY >=0 && newX < width && newY < height) {
-                    if (dist[newY][newX] > dist[curr.y][curr.x] + 1) { // 添加队列规则
-                        dist[newY][newX] = dist[curr.y][curr.x] + 1;
-                        Point point = new Point(newX, newY);
-                        queue.add(point);   // 添加到对BFS队列
-                    }
+        for (int i = height - 1; i >=0; i --) {
+            for (int j = width - 1; j >=0; j --) {
+                if (i < height - 1) {
+                    dist[i][j] = Math.min(dist[i][j], dist[i + 1][j] + 1);
+                }
+                if (j < width - 1) {
+                    dist[i][j] = Math.min(dist[i][j], dist[i][j + 1] + 1);
                 }
             }
         }
@@ -92,7 +84,7 @@ public class Solution3 {
                 {1,1},
                 {0,1}
         };*/
-        Solution3 solution = new Solution3();
+        Solution4 solution = new Solution4();
         matrix = solution.updateMatrix(matrix);
         for (int[] arr : matrix) {
             for(int a : arr) {
