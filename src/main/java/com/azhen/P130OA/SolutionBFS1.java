@@ -1,4 +1,4 @@
-package com.azhen.P130N;
+package com.azhen.P130OA;
 
 import java.util.*;
 import java.util.concurrent.LinkedBlockingQueue;
@@ -7,7 +7,7 @@ import java.util.concurrent.LinkedBlockingQueue;
  * @author Azhen
  * @date 2018/03/12
  */
-public class Solution {
+public class SolutionBFS1 {
     static class Point {
         int row;
         int col;
@@ -91,7 +91,7 @@ public class Solution {
     }
 
     public static void main(String[] args) {
-        Solution solution = new Solution();
+        SolutionBFS1 solution = new SolutionBFS1();
         /*char[][] board = {
                 {'X', 'X', 'X', 'X'},
                 {'X', 'O', 'O', 'X'},
@@ -151,13 +151,13 @@ public class Solution {
         System.out.println(p2.hashCode());
         System.out.println(p1 == p2);*/
 
-        /*Set<Solution> set = new HashSet<>();
-        Solution p1 = new Solution();
+        /*Set<SolutionBFS1> set = new HashSet<>();
+        SolutionBFS1 p1 = new SolutionBFS1();
         p1.col = 1;
         p1.row = 1;
         set.add(p1);
 
-        Solution p2 = new Solution();
+        SolutionBFS1 p2 = new SolutionBFS1();
         p2.col = 1;
         p2.row = 1;
         System.out.println(set.contains(p2));
