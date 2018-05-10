@@ -77,25 +77,16 @@ public class Solution {
         return reverse(ll1);
     }
 
-    private ListNode reverse(ListNode l) {
-        int len = length(l);
-        if (len < 2) {
-            return l;
+    private ListNode reverse(ListNode head) {
+        ListNode prev = null;
+        ListNode curr = head;
+        while (curr != null) {
+            ListNode nextTemp = curr.next;
+            curr.next = prev;
+            prev = curr;
+            curr = nextTemp;
         }
-        ListNode head = l;
-        ListNode tail = head.next;
-        while (tail.next != null) {
-            tail = tail.next;
-        }
-
-        ListNode first = null;
-        while (head != tail) {
-            first = head.next;
-           head.next = tail.next;
-           tail.next = head;
-           head = first;
-        }
-        return head;
+        return prev;
     }
 
     private int length(ListNode l) {
