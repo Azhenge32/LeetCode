@@ -19,7 +19,7 @@ public class Solution2 {
         }
         ListNode root = new ListNode(1);
         // 把list分开两端
-        ListNode preFirstHead = head;
+        ListNode preFirstHead = null;
         ListNode firstHead = head;
         ListNode secondHead = head;
         while (secondHead != null) {

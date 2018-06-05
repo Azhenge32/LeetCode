@@ -1,4 +1,4 @@
-package com.azhen.P147;
+package com.azhen.P147NF;
 
 public class Solution {
     static class ListNode {
