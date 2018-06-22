@@ -1,4 +1,4 @@
-package com.azhen.P130OA;
+package com.demo.UF;
 
 /**
  * @author Azhen
@@ -7,19 +7,24 @@ package com.azhen.P130OA;
 public class SolutionUF {
     class UF {
         private int[] id;
-        private int[] rank; // 保存树的大小
-        private int count;   // 真正合并发生的次数
+        private int[] size; // 保存树的大小
+        private int count;  // 组的数量
 
         public UF(int n) {
             count = n;
             id = new int[n];
-            rank = new int[n];
+            size = new int[n];
             for (int i = 0; i < n; i ++) {
                 id[i] = i;
-                rank[i] = 0;
+                size[i] = 0;
             }
         }
 
+        /**
+         * 查找数的根结点
+         * @param p
+         * @return
+         */
         int find(int p) {
             while (p != id[p]) {
                 id[p] = id[id[p]];
@@ -43,13 +48,14 @@ public class SolutionUF {
                 return ;
             }
 
-            if (rank[i] < rank[j]) {
+            // 确保小树合并到大树
+            if (size[i] < size[j]) {
                 id[i] = j;
-            } else if (rank[i] > rank[j]) {
+            } else if (size[i] > size[j]) {
                 id[j] = i;
             } else {
                 id[j] = i;
-                rank[i]++;
+                size[i]++;
             }
             count --;
         }
