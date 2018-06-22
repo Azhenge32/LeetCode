@@ -1,10 +1,6 @@
-package com.demo.UF;
+package com.azhen.P547;
 
-/**
- * @author Azhen
- * @date 2018/03/12
- */
-public class SolutionUF {
+public class Solution {
     class UF {
         private int[] id;
         private int[] size; // 保存树的大小
@@ -62,16 +58,53 @@ public class SolutionUF {
 
         public int getGroupCount() {
             int sum = 0;
-            for (int i : id) {
-                if (isGroup(i)) {
+            int group = 0;
+            for (int i = 0; i < id.length; i ++) {
+                group = find(i);
+                if (i == group) {
                     sum ++;
                 }
             }
             return sum;
         }
+    }
 
-        public boolean isGroup(int i) {
-            return i == find(i);
+    public int findCicleNum(int[][] M) {
+        if (M == null) {
+            return 0;
         }
+
+        if (M[0] == null || M[0].length == 0) {
+            return 0;
+        }
+        int rows = M.length;
+        int cols = M[0].length;
+        UF uf = new UF(cols);
+
+        int curr;
+        for (int i = 0; i < rows; i ++) {
+            for (int j = i + 1; j < cols; j ++) {
+                curr = M[i][j];
+                if (curr == 1) {
+                    uf.union(i,j);
+                }
+            }
+        }
+        return uf.getGroupCount();
+    }
+
+    public static void main(String[] args) {
+        Solution solution = new Solution();
+        /*int[][] M = new int[][]{
+                {1,1,0},
+                {1,1,1},
+                {0,1,1}
+        };*/
+        int[][] M = new int[][]{
+                {1,1,0},
+                {1,1,0},
+                {0,0,1}
+        };
+        System.out.println(solution.findCicleNum(M));
     }
 }
