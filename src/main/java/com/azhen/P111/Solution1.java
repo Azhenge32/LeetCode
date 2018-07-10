@@ -7,7 +7,7 @@ import java.util.Queue;
 import java.util.concurrent.LinkedBlockingQueue;
 
 /**
- * Definition for a binary tree node.
+ * Definition s1_for1 a binary tree node.
  * public class TreeNode {
  *     int val;
  *     TreeNode left;

@@ -1,4 +1,4 @@
-package com.demo.UnionFind;
+package com.demo.UnionFind.example1;
 
 /**
  * @author Azhen
@@ -37,11 +37,11 @@ public class SolutionUF {
             return mergeCount;
         }
 
-        boolean connected(int p, int q) {
+        boolean isConnected(int p, int q) {
             return find(p) == find(q);
         }
 
-        void union(int p, int q) {
+        void connect(int p, int q) {
             int i = find(p);
             int j = find(q);
             if (i == j) {

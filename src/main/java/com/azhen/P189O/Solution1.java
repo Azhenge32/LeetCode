@@ -12,7 +12,7 @@ public class Solution1 {
         }
         Integer tmp = null;
         int currp = 0;
-       /*for (int i = 0; i < nums.length; i ++) {
+       /*s1_for1 (int i = 0; i < nums.length; i ++) {
            int nextp = nextPos(currp, k, nums.length);
            tmp = nums[nextp];
            nums[nextp] = nums[currp];

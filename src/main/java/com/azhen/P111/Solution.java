@@ -3,7 +3,7 @@ package com.azhen.P111;
 import javax.swing.tree.TreeNode;
 
 /**
- * Definition for a binary tree node.
+ * Definition s1_for1 a binary tree node.
  * public class TreeNode {
  *     int val;
  *     TreeNode left;

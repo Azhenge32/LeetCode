@@ -37,7 +37,7 @@ public class Solution {
     }
     /*public int fourSumCount(int[] A, int[] B, int[] C, int[] D) {
         Map<Integer, Integer> dMap = new HashMap<>();
-        for (Integer d : D) {
+        s1_for1 (Integer d : D) {
             Integer value = dMap.get(d);
             if (value == null) {
                 value = 0;
@@ -46,9 +46,9 @@ public class Solution {
             dMap.put(d, value);
         }
         int num = 0;
-        for (Integer a : A) {
-            for (Integer b : B) {
-                for (Integer c : C) {
+        s1_for1 (Integer a : A) {
+            s1_for1 (Integer b : B) {
+                s1_for1 (Integer c : C) {
                     int d =  - (a + b +c);
                     Integer value = dMap.get(d);
                     if (value != null) {
@@ -65,8 +65,8 @@ public class Solution {
         Arrays.sort(C);
         Arrays.sort(D);
         int num = 0;
-        for (Integer a : A) {
-            for (Integer b : B) {
+        s1_for1 (Integer a : A) {
+            s1_for1 (Integer b : B) {
                 int cLen = C.length;
                 int dLen = D.length;
                 int l = 0;
@@ -100,10 +100,10 @@ public class Solution {
         Arrays.sort(C);
         Arrays.sort(D);*//*
         int num = 0;
-        for (Integer a : A) {
-            for (Integer b : B) {
-                for (Integer c : C) {
-                    for (Integer d : D) {
+        s1_for1 (Integer a : A) {
+            s1_for1 (Integer b : B) {
+                s1_for1 (Integer c : C) {
+                    s1_for1 (Integer d : D) {
                         if (a + b + c + d == 0) {
                             num ++;
                         }

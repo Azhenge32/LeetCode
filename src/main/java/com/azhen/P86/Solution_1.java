@@ -28,7 +28,7 @@ public class Solution_1 {
             }
             head = head.next;
         }
-        // no need for extra check because of fake heads
+        // no need s1_for1 extra check because of fake heads
         smaller.next = biggerHead.next; // join bigger after smaller
         bigger.next = null; // cut off anything after bigger
         return smallerHead.next;
