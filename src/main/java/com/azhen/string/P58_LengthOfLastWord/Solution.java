@@ -13,7 +13,7 @@ public class Solution {
             if (preSpace && Character.isSpaceChar(c)) {
                 continue  ;
             } else {
-                preSpace = false;
+                preSpace = false ;
                 if (!preSpace && Character.isSpaceChar(c)) {
                     break;
                 }
