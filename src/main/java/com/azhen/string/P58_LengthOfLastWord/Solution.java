@@ -11,7 +11,7 @@ public class Solution {
         for (int i = arr.length - 1; i > -1; i --) {
             char c = arr[i];
             if (preSpace && Character.isSpaceChar(c)) {
-                continue;
+                continue  ;
             } else {
                 preSpace = false;
                 if (!preSpace && Character.isSpaceChar(c)) {
