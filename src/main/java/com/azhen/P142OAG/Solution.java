@@ -50,7 +50,7 @@ public class Solution {
 
 /*    public static void main(String[] args) {
         ListNode n1 = new ListNode(1);
-        n1 = new Solution().detectCycle(n1);
+        n1 = new Solution_list().detectCycle(n1);
         System.out.println(n1.val);
     }*/
 
