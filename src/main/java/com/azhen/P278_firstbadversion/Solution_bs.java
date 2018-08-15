@@ -21,7 +21,7 @@ public class Solution_bs {
                 }
             }
             int mid = low + (high - low) / 2;
-            boolean mB = isBadVersion((int)mid);
+            boolean mB = isBadVersion(mid);
 
             if (mB == false) {
                 low = mid;
