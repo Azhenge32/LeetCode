@@ -1,8 +1,16 @@
-package com.demo.Search.BinarySearch;
+package com.demo.Search.BinarySearch.P704_binary_search;
 
-public class BinarySearch {
+public class Solution {
+    public int search(int[] nums, int target) {
+        if (nums == null) {
+            return -1;
+        }
+        int res = binarySearch(nums, 0, nums.length, target);
+        return res >=0 ? res : -1;
+    }
+
     public int binarySearch(int[] a, int fromIndex, int toIndex,
-                                     int key) {
+                                   int key) {
         int low = fromIndex;
         int high = toIndex - 1;
 

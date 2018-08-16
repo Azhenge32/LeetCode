@@ -1,0 +1,4 @@
+1、小心数据溢出
+int mid = low + (high - low) / 2;
+2、注意范围判断
+ if (pos - 1 >= 0 && nums[pos - 1] > nums[pos]) {
