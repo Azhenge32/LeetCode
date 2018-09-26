@@ -1,6 +1,7 @@
-package com.azhen.string.P67_AddBinary;
+package com.demo.Math.P67_AddBinary;
 
 public class Solution {
+
     public String addBinary(String a, String b) {
         int ia = Integer.parseInt(a, 2);
         int ib = Integer.parseInt(b, 2);
